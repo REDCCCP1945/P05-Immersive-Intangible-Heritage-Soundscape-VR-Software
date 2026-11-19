@@ -1,0 +1,10 @@
+{
+  "name": "intangible-heritage-soundscape-healing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "沉浸式非遗音景疗愈虚拟现实体验软件V1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

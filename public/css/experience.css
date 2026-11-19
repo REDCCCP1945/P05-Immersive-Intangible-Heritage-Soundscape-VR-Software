@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #050b10;
+  color: #e8f3f0;
+  font-family: "SimSun", "Songti SC", serif;
+}
+
+#stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#scene {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: none;
+  transition: filter .3s linear;
+}
+
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 26px;
+  font-size: 13px;
+  color: rgba(226, 242, 238, 0.72);
+  pointer-events: none;
+  z-index: 4;
+  letter-spacing: .04em;
+}
+
+.hud-left, .hud-right {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+#btn-finish {
+  pointer-events: auto;
+  border: 1px solid rgba(226, 242, 238, 0.35);
+  background: rgba(5, 12, 16, 0.55);
+  color: rgba(238, 250, 247, 0.9);
+  font-family: "SimHei", sans-serif;
+  font-size: 12px;
+  padding: 7px 14px;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+#btn-finish:hover {
+  background: rgba(20, 40, 44, 0.8);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 40%, rgba(10, 30, 34, 0.55), rgba(3, 8, 11, 0.92));
+  z-index: 8;
+}
+
+.lobby-card {
+  width: min(520px, 88vw);
+  text-align: center;
+  padding: 34px 38px;
+  border: 1px solid rgba(127, 216, 197, 0.22);
+  background: rgba(6, 16, 20, 0.78);
+  backdrop-filter: blur(6px);
+}
+
+.lobby-eyebrow {
+  font-family: "SimHei", sans-serif;
+  font-size: 11px;
+  letter-spacing: .28em;
+  color: rgba(127, 216, 197, 0.72);
+  margin-bottom: 18px;
+}
+
+.lobby-card h1 {
+  font-family: "SimHei", sans-serif;
+  font-weight: normal;
+  font-size: 28px;
+  margin: 0 0 12px;
+  letter-spacing: .08em;
+}
+
+.lobby-card p {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: rgba(222, 240, 236, 0.72);
+  margin: 0 0 18px;
+}
+
+.lobby-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: rgba(200, 224, 219, 0.6);
+  margin-bottom: 22px;
+}
+
+#btn-start, #btn-close {
+  border: 1px solid rgba(127, 216, 197, 0.6);
+  background: rgba(18, 58, 58, 0.55);
+  color: #dff8f1;
+  font-family: "SimHei", sans-serif;
+  font-size: 15px;
+  letter-spacing: .12em;
+  padding: 12px 38px;
+  cursor: pointer;
+}
+
+#btn-start:hover, #btn-close:hover {
+  background: rgba(28, 86, 82, 0.8);
+}
+
+.lobby-note {
+  margin-top: 20px !important;
+  font-size: 11.5px !important;
+  color: rgba(190, 214, 210, 0.5) !important;
+  line-height: 1.8 !important;
+}
+
+.end-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+.end-metrics div {
+  border: 1px solid rgba(127, 216, 197, 0.2);
+  padding: 12px 10px;
+  font-size: 12px;
+  color: rgba(200, 224, 219, 0.68);
+}
+
+.end-metrics strong {
+  display: block;
+  font-family: "SimHei", sans-serif;
+  font-size: 22px;
+  color: #9fe8d8;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 700px) {
+  #hud {
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+  .hud-left, .hud-right {
+    gap: 10px;
+  }
+  #hud-control {
+    display: none;
+  }
+}
+
+[hidden] { display: none !important; }
